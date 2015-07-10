@@ -364,16 +364,22 @@ class DocumentManager
             //header('Pragma: no-cache');
             switch ($content_type) {
                 case 'text/html':
+                    $content_type .= '; charset=UTF-8';	
+                    /*
                     $encoding = @api_detect_encoding_html(file_get_contents($full_file_name));
                     if (!empty($encoding)) {
                         $content_type .= '; charset=' . $encoding;
                     }
+                    */
                     break;
                 case 'text/plain':
+                    $content_type .= '; charset=UTF-8';	
+                    /*
                     $encoding = @api_detect_encoding(strip_tags(file_get_contents($full_file_name)));
                     if (!empty($encoding)) {
                         $content_type .= '; charset=' . $encoding;
                     }
+                    */
                     break;
                 case 'application/vnd.dwg':
                 case 'application/vnd.dwf':
